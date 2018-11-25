@@ -2,9 +2,22 @@
 # 1、爬取一些IP,过滤掉不可用.
 # 2、在requests的请求的proxies参数加入对应的IP.
 # 3、继续爬取.
+# 使用urllib库获取HTML需要
+# 1、proxy_dicy = {
+#     'http':'http://192.168.1.1:8080',
+#     'https':'https://192.168.1.1:8080',
+# }
+# 2、proxy_handler = urllib.request.ProxyHandler(proxy_dict)
+# 3、operen = urllib.request.build_opener(proxy_handler)
+# 4、urllib,request.install_opener(opener)
+# 5、request = urllib.request.Request(url,headers=headers)
+# 6、response = urllib.request.urlopen(request)
+# 7、response.read().decode('utf-8')
 import requests
 from lxml import html
 import json
+import urllib.request
+from urllib import error
 
 
 class SpiderIp(object):
@@ -20,6 +33,7 @@ class SpiderIp(object):
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
         }
         try:
+            # 使用requests库请求HTML
             response = requests.get(self.url, headers=header)
             response.encoding = 'utf-8'
             html_str = response.text
@@ -37,11 +51,34 @@ class SpiderIp(object):
             'http': 'http' + ip_proxy_url,
             'https': 'https' + ip_proxy_url
         }
+        # 使用urllib库中的ProxyHandler方法为请求设置代理返回一个handler
+        proxy_handler = urllib.request.ProxyHandler(proxies)
         try:
-            response = requests.get(self.ip_test_url, headers=header, proxies=proxies, timeout=3)
-            html_str = response.text
-        except:
+            # print("调试")
+            # 使用requests库请求HTML
+            # response = requests.get(self.ip_test_url, headers=header, proxies=proxies, timeout=3)
+            # html_str = response.text
+            # 使用urllib库请求HTML
+            # 使用build_opener(handler)方法来创建opener对象
+            opener = urllib.request.build_opener(proxy_handler)
+            # 使用install_opener(opener)方法创建自定义的opener
+            urllib.request.install_opener(opener)
+            # 使用Request类来构建一个请求
+            request = urllib.request.Request(self.ip_test_url, headers=header)
+            response = urllib.request.urlopen(request, timeout=3)
+            # html_str = response.read()
+            # print(type(response))
+            # <class 'http.client.HTTPResponse'>
+            # print(">>>>>>>调试", html_str)
+        except :
             print("fail:{0}".format(ip_address))
+        # except error.HTTPError as e:
+        #     print("-------------------------1")
+        #     print(e.reason, e.code, e.headers, sep='\n')
+        #     print("fail:{0}".format(ip_address))
+        # except error.URLError as e:
+        #     print("-------------------------2")
+        #     print(e.reason)
         else:
             print("-------------------------")
             print("success:{0}".format(ip_address))
