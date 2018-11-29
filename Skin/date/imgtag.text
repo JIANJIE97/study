@@ -1,0 +1,26 @@
+img节点
+<img src="//game.gtimg.cn/images/yxzj/img201606/heroimg/141/141-smallskin-5.jpg"
+alt=""
+data-imgname="//game.gtimg.cn/images/yxzj/img201606/skin/hero-info/141/141-bigskin-5.jpg"
+data-title="仲夏夜之梦">
+
+<ul class="pic-pf-list pic-pf-list3"
+data-imgname="绝世舞姬|异域舞娘|圣诞恋歌|逐梦之音|仲夏夜之梦">
+<li>
+<i class="curr">
+<img src="//game.gtimg.cn/images/yxzj/img201606/heroimg/141/141-smallskin-1.jpg"
+alt=""
+data-imgname="//game.gtimg.cn/images/yxzj/img201606/skin/hero-info/141/141-bigskin-1.jpg"
+data-title="绝世舞姬">
+</i>
+<p>绝世舞姬</p>
+</li>
+<li>
+<i class="">
+<img src="//game.gtimg.cn/images/yxzj/img201606/heroimg/141/141-smallskin-2.jpg"
+alt="" data-imgname="//game.gtimg.cn/images/yxzj/img201606/skin/hero-info/141/141-bigskin-2.jpg" data-title="异域舞娘"></i><p>异域舞娘</p></li><li><i class=""><img src="//game.gtimg.cn/images/yxzj/img201606/heroimg/141/141-smallskin-3.jpg" alt="" data-imgname="//game.gtimg.cn/images/yxzj/img201606/skin/hero-info/141/141-bigskin-3.jpg" data-title="圣诞恋歌"></i><p>圣诞恋歌</p></li><li><i class=""><img src="//game.gtimg.cn/images/yxzj/img201606/heroimg/141/141-smallskin-4.jpg" alt="" data-imgname="//game.gtimg.cn/images/yxzj/img201606/skin/hero-info/141/141-bigskin-4.jpg" data-title="逐梦之音"></i><p>逐梦之音</p></li><li><i class=""><img src="//game.gtimg.cn/images/yxzj/img201606/heroimg/141/141-smallskin-5.jpg" alt="" data-imgname="//game.gtimg.cn/images/yxzj/img201606/skin/hero-info/141/141-bigskin-5.jpg" data-title="仲夏夜之梦"></i><p>仲夏夜之梦</p></li></ul>
+
+
+
+
+/html/body/div[3]/div[1]/div/div/div[2]/ul
